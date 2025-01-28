@@ -10,8 +10,40 @@ g++ split.cpp test_split.cpp -o test_split
 */
 
 #include "split.h"
-
+#include <iostream>
 int main(int argc, char* argv[])
 {
 
+
+//List is [1,2,4,3]
+Node* four =new  Node(3,nullptr);
+Node* three = new Node(4,four);
+Node* two = new Node(2, three);
+Node* one = new Node(1,two);
+
+//verify i set up this list correctly LOL
+
+ Node* current = one;
+// while(current != nullptr){
+//     std::cout << current->value << std::endl;
+//     current = current->next;
+// }
+Node* odds = nullptr;
+Node* evens = nullptr;
+
+split(one,odds, evens);
+
+std::cout << "odds:" << std::endl;
+current = odds;
+while(current != nullptr){
+    std::cout << current->value << std::endl;
+    current = current->next;
+}
+
+std::cout << "evens:" << std::endl;
+current = evens;
+while(current != nullptr){
+    std::cout << current->value << std::endl;
+    current = current->next;
+}
 }
