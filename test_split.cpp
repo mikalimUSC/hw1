@@ -11,6 +11,7 @@ g++ split.cpp test_split.cpp -o test_split
 
 #include "split.h"
 #include <iostream>
+void delete_list(Node*& head)
 int main(int argc, char* argv[])
 {
 
@@ -33,7 +34,7 @@ Node* evens = nullptr;
 Node* nullInput = nullptr;
 
 split(nullInput,odds, evens);
-void delete_list(Node*& head)
+
 
 std::cout << "odds:" << std::endl;
 current = odds;
