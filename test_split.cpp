@@ -11,7 +11,7 @@ g++ split.cpp test_split.cpp -o test_split
 
 #include "split.h"
 #include <iostream>
-void delete_list(Node*& head)
+
 int main(int argc, char* argv[])
 {
 
@@ -49,17 +49,6 @@ while(current != nullptr){
     std::cout << current->value << std::endl;
     current = current->next;
 }
-  delete_list(odds);
-    delete_list(evens);
-    delete_list(one);
+ 
 }
 
-void delete_list(Node*& head) {
-    Node* current = head;
-    while (current != nullptr) {
-        Node* next = current->next;
-        delete current;
-        current = next;
-    }
-    head = nullptr;
-}
