@@ -30,8 +30,9 @@ Node* one = new Node(1,two);
 // }
 Node* odds = nullptr;
 Node* evens = nullptr;
+Node* nullInput = nullptr;
 
-split(one,odds, evens);
+split(nullInput,odds, evens);
 
 std::cout << "odds:" << std::endl;
 current = odds;

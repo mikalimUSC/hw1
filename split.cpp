@@ -30,9 +30,7 @@ void split(Node*& in, Node*& odds, Node*& evens)
 
 void splithelp(Node*& node, Node*& odds, Node*& evens)
 {
-  
   if(node == nullptr){
-
     return;
   }
  
