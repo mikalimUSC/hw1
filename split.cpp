@@ -19,7 +19,6 @@ void splithelp(Node*& node, Node*& odds, Node*& evens);
 Node* odds = nullptr;
 Node* evens = nullptr;
 Node* add(Node*& list, Node*& node);
-//void print_list(Node* list);
 
 void split(Node*& in, Node*& odds, Node*& evens)
 {
@@ -76,15 +75,3 @@ Node* add(Node*& list, Node*& node){
 
 }
 
-
-
-// void print_list(Node* list){
-//   cout<<" [";
-//   Node* current =list;
-//   while(current != nullptr){
-//     cout<< current->value;
-//     current=current->next;
-//     cout << " , ";
-//   }
-//   cout<<"]"<<endl;
-// }
