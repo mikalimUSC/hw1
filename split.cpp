@@ -40,11 +40,9 @@ void splithelp(Node*& node, Node*& odds, Node*& evens)
  
   if(node->value %2 ==0){
     evens = add(evens,node);
-    print_list(evens);
     
   }else{
     odds = add(odds,node);
-    print_list(odds);
   }
 
   Node* next = node->next;
