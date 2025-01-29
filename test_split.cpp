@@ -33,6 +33,7 @@ Node* evens = nullptr;
 Node* nullInput = nullptr;
 
 split(nullInput,odds, evens);
+void delete_list(Node*& head)
 
 std::cout << "odds:" << std::endl;
 current = odds;
@@ -47,4 +48,17 @@ while(current != nullptr){
     std::cout << current->value << std::endl;
     current = current->next;
 }
+  delete_list(odds);
+    delete_list(evens);
+    delete_list(one);
+}
+
+void delete_list(Node*& head) {
+    Node* current = head;
+    while (current != nullptr) {
+        Node* next = current->next;
+        delete current;
+        current = next;
+    }
+    head = nullptr;
 }
