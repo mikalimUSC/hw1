@@ -21,6 +21,8 @@ Node* add(Node*& list, Node*& node);
 
 void split(Node*& in, Node*& odds, Node*& evens)
 {
+  odds = nullptr;
+  evens = nullptr;
   splithelp(in,odds,evens);
 }
 
