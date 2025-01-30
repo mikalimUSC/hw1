@@ -64,6 +64,8 @@
         "utility": "cpp",
         "format": "cpp",
         "cinttypes": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "charconv": "cpp",
+        "chrono": "cpp"
     }
 }
