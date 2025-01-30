@@ -18,8 +18,8 @@ int main(int argc, char* argv[])
 
 //List is [1,2,4,3]
 Node* four =new  Node(3,nullptr);
-Node* three = new Node(4,four);
-Node* two = new Node(2, three);
+Node* three = new Node(3,four);
+Node* two = new Node(3, three);
 Node* one = new Node(1,two);
 
 Node* zero = new Node(0,nullptr);
@@ -36,7 +36,7 @@ Node* evens = nullptr;
 Node* nullInput = nullptr;
 
 
-split(one,odds, evens);
+split(nullInput,odds, evens);
 
 
 std::cout << "odds:" << std::endl;
