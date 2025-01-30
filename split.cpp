@@ -24,10 +24,8 @@ void split(Node*& in, Node*& odds, Node*& evens)
   odds = nullptr;
   evens = nullptr;
   splithelp(in,odds,evens);
-  delete in;
+  in = nullptr;
 }
-
-
 
 /* If you needed a helper function, write it here */
 
@@ -45,8 +43,8 @@ void splithelp(Node*& node, Node*& odds, Node*& evens)
   }
 
   Node* next = node->next;
-
   splithelp(next,odds,evens);
+   delete node;
 
 
 }
@@ -57,16 +55,18 @@ Node* add(Node*& list, Node*& node){
   }
 
   if(list == nullptr ){
-     Node* newNode = new Node(node->value,nullptr);
-    list = newNode;
+    //  Node* newNode = new Node(node->value,nullptr);
+    list = node;
+    node->next = nullptr;
 
     return list;
   }
   if(list->next == nullptr){
     
-    Node* newNode = new Node(node->value,nullptr);
+    // Node* newNode = new Node(node->value,nullptr);
     
-    list->next = newNode;
+    list->next = node;
+    node->next = nullptr;
     return list;
   }
 
@@ -74,4 +74,3 @@ Node* add(Node*& list, Node*& node){
   return list;
 
 }
-
