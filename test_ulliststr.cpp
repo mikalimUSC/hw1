@@ -23,8 +23,28 @@ int main(int argc, char* argv[])
    list.push_back("h");
    list.push_back("i");
    list.push_back("j");
-    list.push_back("k");
+    list.push_back("k");   
+    
+    //visualize: [a,b,c,d,e,f,g,h,i,j] -> [k]
+    list.pop_back();
+     cout<< " List size now " << list.size() << " front is " << list.front()<< " back is "<< list.back()<<endl;
+    list.pop_back();
+   
+    list.pop_back();
+    list.pop_back();
+    list.pop_back();
+    list.pop_back();
+    list.pop_back();
+    list.pop_back();
     list.pop_back();
     cout<< " List size now " << list.size() << " front is " << list.front()<< " back is "<< list.back()<<endl;
+    list.pop_back();
+cout<< " List size now " << list.size() <<endl;
+cout << " front is " << list.front()<< " back is "<< list.back()<<endl;
+
 }
+
+
+
+
 

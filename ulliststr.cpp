@@ -23,6 +23,7 @@ bool ULListStr::empty() const
 
 size_t ULListStr::size() const
 {
+
   return size_;
 }
 
@@ -30,57 +31,72 @@ size_t ULListStr::size() const
 
 
 void ULListStr::push_back(const std::string& val){
+  cout << " Val is " << val << endl;
   if(tail_==nullptr){ //empty list
-
     Item* item = new Item();
     item->val[0] = val;
     item->first = 0; 
     item->last = 1;
-    head_ = tail_ = item;
+    head_ = item;
+    tail_ = item;
+    return;
   }
-  if(tail_->last != ARRSIZE-1){ //Case: Tail still has space
+  if(tail_->last != ARRSIZE){ //Case: Tail still has space
     tail_->val[tail_->last] = val;
     tail_->last++;
 
+
   }else{ //Gotta add a whole new item node
 
-    tail_->val[tail_->last] = val;
     Item* item = new Item();
-    item->prev = tail_;
-    item->next = nullptr;
-    item->first =0;
+    item->first=0;
     item->last = 1;
     tail_->next = item;
+    item->prev = tail_;
     tail_ = item;
+    tail_->val[tail_->first] = val;
      
-
   }
+  
   size_++;
   }
 
 
   void ULListStr::pop_back(){
-    if(size_==0){
-      return;
-    }
-    if(tail_->last-1==0){
-      Item* temp = tail_->prev;
-      delete tail_;
-      tail_ = temp;
-      tail_->next = nullptr;
-      return;
+
+    if(size_!=0 && tail_!=nullptr){
+  
+      cout << " tail->last is " << tail_->last << " tail first is " << tail_->first<<endl;
+      if(tail_->last - tail_->first==1){
+        if(tail_!=head_){
+          cout << "Tail not equal to head but we are about to delete a whole item" << endl;
+          Item* temp = tail_;
+          tail_->prev->next = nullptr; 
+          tail_ = tail_->prev; 
+          tail_->last = ARRSIZE;
+          delete temp; 
+        }else{
+          cout << " k"<<endl;
+          delete tail_;
+          head_ = nullptr;
+          tail_ = nullptr;
       
-    }else{
-            tail_->val[tail_->last-1] = nullptr;
-    tail_->last--;
-    }
-     if (head_->first == head_->last && head_ == tail_) { 
-        clear(); 
-    }
-
-
+        }
+        
+      }else{
+   
+        tail_->last--;
+      }
+ 
+ 
     size_--;
+  
+    }
+
   }
+
+
+
 
     void ULListStr::push_front(const std::string& val){
 
@@ -92,19 +108,21 @@ void ULListStr::push_back(const std::string& val){
 
   std::string const & ULListStr::back() const{
     if(size_==0){
-      return nullptr;
+    
+      return "";
     }
+    
     return tail_->val[tail_->last-1];
 
   }
-
  std::string const & ULListStr::front() const {
-  if(size_==0){
-      return nullptr;
+  if(size_ ==0){
+      return "";
     }
-    return head_->val[head_->first];
 
+    return head_->val[head_->first];
  }
+
 void ULListStr::set(size_t loc, const std::string& val)
 {
   std::string* ptr = getValAtLoc(loc);
@@ -114,13 +132,9 @@ void ULListStr::set(size_t loc, const std::string& val)
   *ptr = val;
 }
 
-
   std::string*  ULListStr::getValAtLoc(size_t loc) const{
     return nullptr;
   }
-
-
-
 
 std::string& ULListStr::get(size_t loc)
 {
