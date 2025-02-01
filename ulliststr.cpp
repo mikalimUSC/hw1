@@ -56,13 +56,30 @@ void ULListStr::push_back(const std::string& val){
 
   }
   size_++;
-
   }
 
 
-
   void ULListStr::pop_back(){
+    if(size_==0){
+      return;
+    }
+    if(tail_->last-1==0){
+      Item* temp = tail_->prev;
+      delete tail_;
+      tail_ = temp;
+      tail_->next = nullptr;
+      return;
+      
+    }else{
+            tail_->val[tail_->last-1] = nullptr;
+    tail_->last--;
+    }
+     if (head_->first == head_->last && head_ == tail_) { 
+        clear(); 
+    }
 
+
+    size_--;
   }
 
     void ULListStr::push_front(const std::string& val){
