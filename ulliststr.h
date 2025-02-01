@@ -113,6 +113,9 @@ class ULListStr {
    */
   void clear();
 
+  void setHead(Item* head) { head_ = head; }
+  void setTail(Item* tail) { tail_ = tail; }
+
  private:
   /** 
    * Returns a pointer to the item at index, loc,
@@ -130,6 +133,7 @@ class ULListStr {
   Item* head_;
   Item* tail_;
   size_t size_;
+  
 };
 
 #endif
