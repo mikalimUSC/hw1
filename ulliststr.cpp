@@ -34,7 +34,6 @@ size_t ULListStr::size() const
 
 
 void ULListStr::push_back(const std::string& val){
-  cout << " Val is " << val << endl;
   if(tail_==nullptr){ //empty list
     Item* item = new Item();
     item->val[0] = val;
@@ -61,7 +60,6 @@ void ULListStr::push_back(const std::string& val){
     tail_->val[tail_->first] = val;
      
   }
-  cout <<" Pushback: val is " << val << "last is " << tail_->last << endl;
   size_++;
   }
 
@@ -70,17 +68,15 @@ void ULListStr::push_back(const std::string& val){
 
     if(size_!=0 && tail_!=nullptr){
   
-      cout << " tail->last is " << tail_->last << " tail first is " << tail_->first<<endl;
       if(tail_->last - tail_->first==1){
         if(tail_!=head_){
-          cout << "Tail not equal to head but we are about to delete a whole item" << endl;
           Item* temp = tail_;
           tail_->prev->next = nullptr; 
           tail_ = tail_->prev; 
           tail_->last = ARRSIZE;
           delete temp; 
         }else{
-          cout << " k"<<endl;
+  
           delete tail_;
           head_ = nullptr;
           tail_ = nullptr;
