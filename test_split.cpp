@@ -15,6 +15,9 @@ g++ split.cpp test_split.cpp -o test_split
 int main(int argc, char* argv[])
 {
 
+<<<<<<< HEAD
+}
+
 
 //List is [1,2,4,3]
 Node* four =new  Node(3,nullptr);
@@ -54,4 +57,3 @@ while(current != nullptr){
 }
  
 }
-

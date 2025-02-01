@@ -1,8 +1,11 @@
 #include <cstddef>
 #include <stdexcept>
 #include "ulliststr.h"
+<<<<<<< HEAD
+=======
 #include <iostream>
 using namespace std;
+
 
 ULListStr::ULListStr()
 {
@@ -24,10 +27,12 @@ bool ULListStr::empty() const
 size_t ULListStr::size() const
 {
 
+
   return size_;
 }
 
 // WRITE YOUR CODE HERE
+
 
 
 void ULListStr::push_back(const std::string& val){
@@ -161,6 +166,7 @@ void ULListStr::push_back(const std::string& val){
     return head_->val[head_->first];
  }
 
+
 void ULListStr::set(size_t loc, const std::string& val)
 {
   std::string* ptr = getValAtLoc(loc);
@@ -170,6 +176,8 @@ void ULListStr::set(size_t loc, const std::string& val)
   *ptr = val;
 }
 
+<<<<<<< HEAD
+=======
   std::string*  ULListStr::getValAtLoc(size_t loc) const{
     return nullptr;
   }
