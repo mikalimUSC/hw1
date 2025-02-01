@@ -174,8 +174,6 @@ void ULListStr::set(size_t loc, const std::string& val)
   *ptr = val;
 }
 
-<<<<<<< HEAD
-=======
   std::string*  ULListStr::getValAtLoc(size_t loc) const{
     return nullptr;
   }

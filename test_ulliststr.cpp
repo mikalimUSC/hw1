@@ -2,21 +2,16 @@
 #include <vector>
 #include <iostream>
 #include <sstream>
-<<<<<<< HEAD
 
-=======
 using namespace std;
->>>>>>> 102ff294dfa6021809acd7f9ff30388a50586062
 #include "ulliststr.h"
 
 //Use this file to test your ulliststr implementation before running the test suite
 
 int main(int argc, char* argv[])
 {
-<<<<<<< HEAD
 
-}
-=======
+
   ULListStr list;
 
    cout<< " List size starts at " << list.size() <<endl;
@@ -63,4 +58,3 @@ int main(int argc, char* argv[])
 
 
 
->>>>>>> 102ff294dfa6021809acd7f9ff30388a50586062
