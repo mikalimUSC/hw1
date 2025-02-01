@@ -39,6 +39,7 @@ void ULListStr::push_back(const std::string& val){
     item->last = 1;
     head_ = item;
     tail_ = item;
+    size_++;
     return;
   }
   if(tail_->last != ARRSIZE){ //Case: Tail still has space
@@ -57,7 +58,7 @@ void ULListStr::push_back(const std::string& val){
     tail_->val[tail_->first] = val;
      
   }
-  
+  cout <<" Pushback: val is " << val << "last is " << tail_->last << endl;
   size_++;
   }
 
@@ -80,31 +81,68 @@ void ULListStr::push_back(const std::string& val){
           delete tail_;
           head_ = nullptr;
           tail_ = nullptr;
-      
         }
-        
       }else{
    
         tail_->last--;
       }
- 
- 
     size_--;
   
     }
 
   }
 
-
-
-
     void ULListStr::push_front(const std::string& val){
 
+      if(head_==nullptr){ //empty list
+      Item* item = new Item();
+      item->val[0] = val;
+      item->first = 0; 
+      item->last = 1;
+      head_ = item;
+      tail_ = item;
+      size_++;
+      return;
+      }
+
+    if(head_->first != 0){ //Case: dont have to add a whole new node
+      head_->val[head_->first-1] = val;
+      head_->first--;
+    }else{
+      
+      Item* item = new Item();
+      item->first=ARRSIZE-1;
+      item->last = ARRSIZE;
+      head_->prev = item;
+      item->next = head_;
+      head_ = item;
+      head_->val[head_->first] = val;
+    }
+    size_++;
+
     }
 
-    void ULListStr::pop_front(){
-
+   void ULListStr::pop_front() {
+    if (size_ != 0 && head_ != nullptr) {
+        if (head_->last - head_->first == 1) {
+            if (head_ != tail_) {
+                Item* temp = head_;
+                head_->next->prev = nullptr; 
+                head_ = head_->next; 
+                head_->first = 0;
+          
+                delete temp; 
+            } else {
+                delete head_;
+                head_ = nullptr;
+                tail_ = nullptr;
+            }
+        } else {
+            head_->first++;
+        }
+        size_--;
     }
+}
 
   std::string const & ULListStr::back() const{
     if(size_==0){
