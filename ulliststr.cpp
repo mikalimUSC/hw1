@@ -1,8 +1,6 @@
 #include <cstddef>
 #include <stdexcept>
 #include "ulliststr.h"
-<<<<<<< HEAD
-=======
 #include <iostream>
 using namespace std;
 

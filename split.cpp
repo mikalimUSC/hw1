@@ -14,11 +14,6 @@ the function below should be the only one in this file.
 
 /* Add a prototype for a helper function here if you need */
 
-void split(Node*& in, Node*& odds, Node*& evens)
-{
-  /* Add code here */
-// WRITE YOUR CODE HERE
-}
 
 /* If you needed a helper function, write it here */
 //#include <iostream>
