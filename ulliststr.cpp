@@ -171,7 +171,23 @@ void ULListStr::set(size_t loc, const std::string& val)
 }
 
   std::string*  ULListStr::getValAtLoc(size_t loc) const{
+    if (loc >= size_) {
+        return nullptr;
+    }
+
+    Item* current = head_;
+    while (current != nullptr) {
+        for (int i = current->first; i < current->last; i++) {
+            if (loc == 0) {
+                return &(current->val[i]);
+            }
+            --loc;
+        }
+        current = current->next;
+    }
+
     return nullptr;
+    
   }
 
 std::string& ULListStr::get(size_t loc)
